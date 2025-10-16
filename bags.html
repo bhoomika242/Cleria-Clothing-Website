@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bags - Demo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      border-bottom: 1px solid #ddd;
+      background: #fff;
+      position: relative;
+    }
+
+    .menu-icon {
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .back-home {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #111;
+      transition: color 0.3s;
+    }
+
+    .back-home:hover { color: #b76e79; }
+
+    .side-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      padding: 10px;
+      z-index: 1000;
+    }
+
+    .side-menu a { display: block; padding: 10px; color: #111; text-decoration: none; }
+    .side-menu a:hover { background: #f2f2f2; }
+
+     .banner {
+  width: 100%;
+  height: 400px;          
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  display: block;
+}
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+       .product-image {
+  width: 100%;
+  height: 250px;       
+  overflow: hidden;     
+  border-radius: 10px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  display: block;
+}
+
+    .product-card:hover .product-image img { transform: scale(1.05); }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #8b7355;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+      .product-info {
+      padding: 22px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .product-info h3 {
+      font-size: 18px;
+      margin: 0;
+      color: #5a4e47;
+      font-weight: 600;
+    }
+
+    .product-info p {
+      color: #9d8c7a;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .price {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .current-price { font-size: 20px; font-weight: 700; color: #8b7355; }
+    .original-price { font-size: 14px; color: #b5a99d; text-decoration: line-through; }
+    .discount { color: #c17c54; font-weight: 600; font-size: 13px; background: rgba(193, 124, 84, 0.08); padding: 4px 8px; border-radius: 12px; }
+
+   
+.add-to-cart {
+  display: inline-block;
+  background-color: #8b7355; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+.add-to-cart:hover {
+  background-color: #6d5a44;
+}
+
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;           
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 20px;
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .footer-section { flex: 1; min-width: 220px; }
+
+    .footer-section h3 {
+      color: #8b7355;
+      margin-bottom: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-section p, .footer-section a {
+      color: #9d8c7a;
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 14px;
+    }
+
+    .footer-section a:hover { color: #8b7355; }
+
+    .copyright { margin-top: 10px; font-size: 14px; color: #a99b8f; }
+
+    .newsletter { display: flex; margin-top: 8px; gap: 0; }
+    .newsletter input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #e8e0d7;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+      color: #5a4e47;
+    }
+    .newsletter button {
+      background: #8b7355;
+      color: white;
+      border: none;
+      padding: 0 18px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+    .cart {
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto; 
+}
+
+#cart-count {
+  background: #b08968; 
+  color: white;
+  border-radius: 50%;
+  padding: 3px 8px;
+  font-size: 0.9rem;
+  position: absolute;
+  top: -10px;
+  right: -15px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="page-title">BAGS</div>
+    <a href="eg2.html" class="back-home">Home</a>
+    <nav>
+    <a href="cart.html">🛒</a> <span id="cart-count">0</span>
+  </div>
+</nav>
+
+  </header>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="#">Handbags</a>
+    <a href="#">Backpacks</a>
+    <a href="#">Clutches</a>
+    <a href="#">Totes</a>
+    <a href="#">Travel Bags</a>
+  </div>
+
+  <div class="banner">
+    <img src="bagn.jpg" alt="">
+  </div>
+<br>
+<br>
+<br>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="bag.jpg" alt="Leather Tote Bag">
+        <div class="product-badge">New</div>
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Classic Leather Tote</h3>
+          <p>Spacious tote bag made from premium full-grain leather with sturdy handles.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$149.99</span>
+            <span class="original-price">$189.99</span>
+            <span class="discount">-21%</span>
+          </div>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="bag2.jpg" alt="Crossbody Bag">
+        <div class="product-badge">Bestseller</div>
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Mini Crossbody Bag</h3>
+          <p>Compact crossbody bag with adjustable strap and multiple compartments.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$89.99</span>
+            <span class="original-price">$119.99</span>
+            <span class="discount">-25%</span>
+          </div>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="b1.jpg" alt="Leather Backpack">
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Leather Backpack</h3>
+          <p>Stylish backpack with laptop compartment and water-resistant lining.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$129.99</span>
+            <span class="original-price">$159.99</span>
+            <span class="discount">-19%</span>
+          </div>
+         <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="b2.jpg" alt="Evening Clutch Bag">
+        <div class="product-badge">Sale</div>
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Evening Clutch</h3>
+          <p>Elegant clutch bag with metallic finish, perfect for formal occasions.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$65.99</span>
+            <span class="original-price">$89.99</span>
+            <span class="discount">-27%</span>
+          </div>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="b3.jpg" alt="Bucket Bag">
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Bucket Bag</h3>
+          <p>Trendy bucket bag with drawstring closure and detachable strap.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$99.99</span>
+            <span class="original-price">$129.99</span>
+            <span class="discount">-23%</span>
+          </div>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="b4.jpg" alt="Classic Satchel">
+        <div class="product-badge">Popular</div>
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Classic Satchel</h3>
+          <p>Structured satchel with top handle and optional crossbody strap.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$139.99</span>
+            <span class="original-price">$179.99</span>
+            <span class="discount">-22%</span>
+          </div>
+         <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="b5.jpg" alt="Weekender Bag">
+        <div class="product-badge">New</div>
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Weekender Bag</h3>
+          <p>Spacious weekender with multiple pockets and comfortable handles.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$159.99</span>
+            <span class="original-price">$199.99</span>
+            <span class="discount">-20%</span>
+          </div>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="b5.jpg" alt="Phone Crossbody Bag">
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Phone Crossbody</h3>
+          <p>Compact bag designed to hold your phone and essentials with RFID protection.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$49.99</span>
+            <span class="original-price">$69.99</span>
+            <span class="discount">-29%</span>
+          </div>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="b7.jpg" alt="Drawstring Bag">
+        <div class="product-badge">Trending</div>
+      </div>
+      <div class="product-info">
+        <div>
+          <h3>Drawstring Backpack</h3>
+          <p>Casual drawstring backpack made from durable canvas material.</p>
+        </div>
+        <div>
+          <div class="price">
+            <span class="current-price">$45.99</span>
+            <span class="original-price">$59.99</span>
+            <span class="discount">-23%</span>
+          </div>
+        <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div> 
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Customer Service</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Shipping Information</a>
+        <a href="#">Returns & Exchanges</a>
+        <a href="#">Size Guide</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <a href="#">Our Story</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Careers</a>
+        <a href="#">Store Locations</a>
+      </div>
+
+      <div class="footer-section">
+        <h3>Stay Connected</h3>
+        <p>Subscribe to our newsletter for updates</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Enter your email">
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2023 Men's Collection. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("sideMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  
+</script>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function updateCartCount() {
+  let badge = document.getElementById("cart-count");
+  if (badge) badge.innerText = cart.length;
+}
+function addToCart(productName, price) {
+  cart.push({ name: productName, price: price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert(productName + " added to cart!");
+}
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.getAttribute("data-name");
+    const price = parseFloat(button.getAttribute("data-price"));
+    addToCart(name, price);
+  });
+});
+updateCartCount();
+</script>
+</body>
+</html>

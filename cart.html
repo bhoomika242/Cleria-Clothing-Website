@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: rgb(141, 135, 135); color: #ddd; }
+    h1 { text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    th { background: #f4f4f4; }
+    .total { margin-top: 20px; font-size: 1.2rem; text-align: right; }
+    button { padding: 6px 12px; background: #8B7355; color: #fff; border: none; cursor: pointer; }
+    button:hover { background: #6e5b44; }
+    
+  </style>
+</head>
+<body>
+
+  <h1>Your Cart</h1>
+  <table id="cart-table">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </table>
+  <div class="total" id="cart-total">Total: $0</div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+      const table = document.getElementById("cart-table");
+      let total = 0;
+
+      table.innerHTML = `
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      `;
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        let row = `
+          <tr>
+            <td>${item.name}</td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td><button onclick="removeFromCart(${index})">Remove</button></td>
+          </tr>
+        `;
+        table.innerHTML += row;
+      });
+
+      document.getElementById("cart-total").innerText = "Total: $" + total.toFixed(2);
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
+
+</body>
+</html>

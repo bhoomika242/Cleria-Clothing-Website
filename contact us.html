@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f0f6ff;
+      color: #333;
+    }
+
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: #ad9f4b;
+      color: white;
+    }
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+    .contact-container {
+      display: flex;
+      max-width: 1000px;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .contact-info {
+      background: #c0a13c;
+      color: white;
+      padding: 40px;
+      flex: 1;
+    }
+    .contact-info h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .contact-info p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .contact-form {
+      flex: 2;
+      padding: 40px;
+    }
+    .contact-form h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #bea552;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 14px;
+      background: #c4b76f;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background: #b8a958;
+    }
+
+   
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #b6ab46;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <center><div class="logo">CELIRA</div></center>
+    <div>Contact Us</div>
+  </div>
+
+
+  <section class="contact-section">
+    <div class="contact-container">
+
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>📍 123 Main Street, Bangalore, India</p>
+        <p>📞 +91 98765 43210</p>
+        <p>📧 support@mystore.com</p>
+      </div>
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <input type="text" placeholder="Subject">
+          <textarea rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 MyStore. All Rights Reserved.
+  </div>
+</body>
+</html>
