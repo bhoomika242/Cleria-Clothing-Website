@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Arrivals</title>
+  <style>
+    body {
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      background: #111;
+      color: white;
+      padding: 15px 20px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .navbar-title {
+      font-size: 22px;
+    }
+
+    .navbar-home {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 8px 15px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    .navbar-home:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #222;
+      width: 200px;
+      padding: 10px 0;
+      border-radius: 0 0 6px 6px;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .menu.show {
+      display: block;
+    }
+
+    .menu a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      font-size: 15px;
+      transition: background 0.3s;
+    }
+
+    .menu a:hover {
+      background: #444;
+    }
+
+    .banner {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin: 40px 0 30px;
+      color: #222;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #5a8f7b;
+      margin: 15px auto;
+    }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+    .product-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .new-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ff6b6b;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-info h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 700;
+      color: #5a8f7b;
+      margin-bottom: 15px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #5a8f7b;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #4a7c68;
+    }
+
+    .view-all {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .view-all a {
+      color: #666;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .view-all a:hover {
+      color: #5a8f7b;
+    }
+
+    .view-all i {
+      margin-left: 8px;
+    }
+
+    footer {
+      background: #f8f9fa;
+      padding: 60px 0 30px;
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-section h3 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-section p, .footer-section a {
+      color: #7f8c8d;
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .footer-section a:hover {
+      color: #3498db;
+    }
+
+    .copyright {
+      text-align: center;
+      color: #7f8c8d;
+      padding-top: 30px;
+      border-top: 1px solid #ecf0f1;
+      margin: 0 20px;
+    }
+    }
+.add-to-cart {
+  display: inline-block;
+  background-color: #8b7355; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+.add-to-cart:hover {
+  background-color: #6d5a44;
+}
+   .cart {
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto;
+}
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-left">
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="navbar-title">NEW ARRIVALS</div>
+    </div>
+    
+    <a href="eg2.html" class="navbar-home">Home</a>
+   <nav>
+    <a href="cart.html">🛒</a> <span id="cart-count">0</span>
+  </div>
+</nav>
+  </div>
+    <div class="menu" id="menu">
+      <a href="#">Shop All</a>
+      <a href="men.html">Men</a>
+      <a href="men.html">Women</a>
+      <a href="bags.html">Bag</a>
+      <a href="shoes.html">Shoes</a>
+      <a href="watches.html">Watches</a>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img src="newew1.jpg" alt="">
+  </div>
+<br>
+<br>
+ <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                  <img src="outfit 1.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3></h3>
+                    <div class="price">$29.99</div>
+                   <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="bag.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3></h3>
+                    <div class="price">$45.99</div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="girljeans.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3></h3>
+                    <div class="price">$45.99</div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="shoe.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3></h3>
+                    <div class="price">$45.99</div>
+                  <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="watch 2.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3></h3>
+                    <div class="price">$45.99</div>
+                   <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="shoe2.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3>Cotton Socks Pack</h3>
+                    <div class="price">$19.99</div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="og6.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3></h3>
+                    <div class="price">$35.99</div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="watch7.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3></h3>
+                    <div class="price">$24.99</div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="bag2.jpg" alt="">
+                    <div class="new-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3></h3>
+                    <div class="price">$89.99</div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+        </div>
+      <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Shipping Information</a>
+                    <a href="#">Returns & Exchanges</a>
+                    <a href="#">Size Guide</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <a href="#">Our Story</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Store Locations</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe to our newsletter for updates</p>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+  <script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function updateCartCount() {
+  let badge = document.getElementById("cart-count");
+  if (badge) badge.innerText = cart.length;
+}
+function addToCart(productName, price) {
+  cart.push({ name: productName, price: price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert(productName + " added to cart!");
+}
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.getAttribute("data-name");
+    const price = parseFloat(button.getAttribute("data-price"));
+    addToCart(name, price);
+  });
+});
+updateCartCount();
+
+</script>
+</body>
+</html>

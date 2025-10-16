@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      padding: 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .product-image img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .age-badge {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 8px;
+      font-size: 12px;
+      color: #fff;
+      background: #555;
+      border-radius: 4px;
+    }
+
+    .product-info h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .product-info p {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0 10px;
+    }
+
+    .price {
+      margin: 10px 0;
+    }
+
+    .current-price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+      margin-right: 8px;
+    }
+
+    .original-price {
+      font-size: 14px;
+      color: #999;
+      text-decoration: line-through;
+      margin-right: 8px;
+    }
+
+    .discount {
+      font-size: 14px;
+      color: green;
+    }
+
+    .add-to-cart {
+      background: #8B7355;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background: #6d5c46;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      border-bottom: 1px solid #d1e6f3;
+      background: #fff;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+ <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="page-title">KIDS'S COLLECTION</div>
+    <a href="eg2.html" class="back-home">Home</a>
+    
+  </header>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k1.jpg" alt="">
+        <div class="age-badge">4-6 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Classic Leather Tote</h3>
+        <p>Spacious and elegant leather tote bag</p>
+        <div class="price">
+          <span class="current-price">$149.99</span>
+          <span class="original-price">$199.99</span>
+          <span class="discount">-25%</span>
+        </div>
+        <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+      </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k2.jpg" alt="">
+        <div class="age-badge">3-5 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Denim Jacket</h3>
+        <p>Trendy unisex denim jacket</p>
+        <div class="price">
+          <span class="current-price">$49.99</span>
+          <span class="original-price">$69.99</span>
+          <span class="discount">-29%</span>
+        </div>
+        <button class="add-to-cart" data-name="Denim Jacket" data-price="49.99">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k3.jpg" alt="">
+        <div class="age-badge">5-7 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Floral Dress</h3>
+        <p>Pretty summer dress with floral prints</p>
+        <div class="price">
+          <span class="current-price">$39.99</span>
+          <span class="original-price">$59.99</span>
+          <span class="discount">-33%</span>
+        </div>
+        <button class="add-to-cart" data-name="Floral Dress" data-price="39.99">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k10.jpg" alt="">
+        <div class="age-badge">2-4 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Sports Shoes</h3>
+        <p>Comfortable sneakers for everyday wear</p>
+        <div class="price">
+          <span class="current-price">$29.99</span>
+          <span class="original-price">$39.99</span>
+          <span class="discount">-25%</span>
+        </div>
+        <button class="add-to-cart" data-name="Sports Shoes" data-price="29.99">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k6.jpg" alt="">
+        <div class="age-badge">4-6 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Animal Mittens</h3>
+        <p>Warm mittens with cute animal faces</p>
+        <div class="price">
+          <span class="current-price">$14.99</span>
+          <span class="original-price">$18.99</span>
+          <span class="discount">-21%</span>
+        </div>
+        <button class="add-to-cart" data-name="Animal Mittens" data-price="14.99">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k7.jpg" alt="">
+        <div class="age-badge">3-6 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Woolen Cap</h3>
+        <p>Soft knitted cap for winter</p>
+        <div class="price">
+          <span class="current-price">$9.99</span>
+          <span class="original-price">$14.99</span>
+          <span class="discount">-33%</span>
+        </div>
+        <button class="add-to-cart" data-name="Woolen Cap" data-price="9.99">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k8.jpg" alt="">
+        <div class="age-badge">5-8 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Graphic T-shirt</h3>
+        <p>Cool cotton T-shirt with cartoon print</p>
+        <div class="price">
+          <span class="current-price">$19.99</span>
+          <span class="original-price">$29.99</span>
+          <span class="discount">-33%</span>
+        </div>
+        <button class="add-to-cart" data-name="Graphic T-shirt" data-price="19.99">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k9.jpg" alt="">
+        <div class="age-badge">6-9 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Backpack</h3>
+        <p>Stylish backpack for kids</p>
+        <div class="price">
+          <span class="current-price">$24.99</span>
+          <span class="original-price">$34.99</span>
+          <span class="discount">-29%</span>
+        </div>
+        <button class="add-to-cart" data-name="Backpack" data-price="24.99">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="k10.jpg" alt="">
+        <div class="age-badge">4-7 Years</div>
+      </div>
+      <div class="product-info">
+        <h3>Raincoat</h3>
+        <p>Lightweight waterproof raincoat</p>
+        <div class="price">
+          <span class="current-price">$34.99</span>
+          <span class="original-price">$44.99</span>
+          <span class="discount">-22%</span>
+        </div>
+        <button class="add-to-cart" data-name="Raincoat" data-price="34.99">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
