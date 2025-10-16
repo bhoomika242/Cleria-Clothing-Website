@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoes Collection</title>
+  <link rel="stylesheet" href="shoes.css">
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f8f6;
+  color: #4d352e;
+}
+
+header {
+  background: #682105;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+  .banner {
+  width: 100%;
+  height: 400px;         
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  display: block;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #cde6d5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+}
+
+.product-image {
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  display: block;
+}
+
+.product-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #8b1d1dce;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #c9d652;
+}
+
+.product-info p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #dacf38;
+}
+     .product-image {
+  width: 100%;
+  height: 250px;        
+  overflow: hidden;     
+  border-radius: 10px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  display: block;
+}
+
+.price {
+  font-weight: bold;
+  color: #5f5a0f;
+  font-size: 16px;
+}
+footer {
+  padding: 50px 0;
+  color: #b1b347;
+  border-top: 1px solid #cde6d5;
+  margin-top: 40px;
+  background: #e8f5e9;
+  font-size: 15px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  color: #978939;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer-section a, 
+.footer-section p {
+  color: #859432;
+  margin-bottom: 12px;
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #8a9717;
+}
+
+.newsletter {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 10px;
+  border: 1px solid #a5d6a7;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.newsletter button {
+  background: #787d2e;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter button:hover {
+  background: #635d0f;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #cde6d5;
+  color: #4a6a52;
+}
+
+.add-to-cart {
+  display: inline-block;
+  background-color: #8b7355; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+.add-to-cart:hover {
+  background-color: #6d5a44;
+}
+   .cart {
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto; 
+}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="cart" id="cart">
+    <a href="cart.html">🛒</a> <span id="cart-count">0</span>
+  </div>
+</nav>
+  <header>
+    <h1>Shoes Collection</h1>
+     </header>
+ <div class="banner">
+  <img src="sb.jpg" alt="">
+ </div>
+
+ <br>
+ <br>
+ <br>
+
+  <main>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-image">
+          <img src="shoe.jpg" alt="">
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-info">
+          <h2>Running Sneakers</h2>
+          <p>Comfort & speed for every step.</p>
+          <span class="price">$78</span>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="shoe2.jpg" alt="">
+          <div class="product-badge">Sale</div>
+        </div>
+        <div class="product-info">
+          <h2>Formal Leather Shoes</h2>
+          <p>Elegance for every occasion.</p>
+          <span class="price">$80</span>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="s1.jpg" alt="">
+          <div class="product-badge">Hot</div>
+        </div>
+        <div class="product-info">
+          <h2>Casual Sneakers</h2>
+          <p>Style that fits every mood.</p>
+          <span class="price">$60.8</span>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="s2.jpg" alt="">
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-info">
+          <h2>Sports Shoes</h2>
+          <p>Durable and lightweight design.</p>
+          <span class="price">$82.56</span>
+            <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="s3.jpg" alt="">
+          <div class="product-badge">Trending</div>
+        </div>
+        <div class="product-info">
+          <h2>Classic Loafers</h2>
+          <p>Perfect blend of comfort & style.</p>
+          <span class="price">$59.34</span>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="s4.jpg" alt="">
+          <div class="product-badge">Hot</div>
+        </div>
+        <div class="product-info">
+          <h2>Slip On Shoes</h2>
+          <p>Quick wear, all-day comfort.</p>
+          <span class="price">$40.54</span>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="s5.jpg" alt="">
+          <div class="product-badge">Sale</div>
+        </div>
+        <div class="product-info">
+          <h2>High Tops</h2>
+          <p>Street-style fashion essential.</p>
+          <span class="price">$67.9</span>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="s6.jpg" alt="">
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-info">
+          <h2>Comfort Sandals</h2>
+          <p>Breezy comfort for summer days.</p>
+          <span class="price">$15</span>
+          <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="s7.jpg" alt="">
+          <div class="product-badge">Hot</div>
+        </div>
+        <div class="product-info">
+          <h2>Leather Boots</h2>
+          <p>Rugged and long-lasting wear.</p>
+          <span class="price">$40.25</span>
+         <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Customer Service</h3>
+        <a href="#">Contact Us</a>
+        <a href="#">Shipping Information</a>
+        <a href="#">Returns & Exchanges</a>
+        <a href="#">Size Guide</a>
+      </div>
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <a href="#">Our Story</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Careers</a>
+        <a href="#">Store Locations</a>
+      </div>
+      <div class="footer-section">
+        <h3>Stay Connected</h3>
+        <p>Subscribe to our newsletter for updates</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Enter your email">
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2023 Shoes Collection. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function updateCartCount() {
+  let badge = document.getElementById("cart-count");
+  if (badge) badge.innerText = cart.length;
+}
+function addToCart(productName, price) {
+  cart.push({ name: productName, price: price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert(productName + " added to cart!");
+}
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.getAttribute("data-name");
+    const price = parseFloat(button.getAttribute("data-price"));
+    addToCart(name, price);
+  });
+});
+
+updateCartCount();
+
+</script>
+</html>
+
