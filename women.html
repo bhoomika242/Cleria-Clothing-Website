@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women - CELIRA</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background:radial-gradient(white,pink,rgb(248, 140, 158));
+      color: #111;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      border-bottom: 1px solid #ddd;
+      background: #fff;
+      position: relative;
+    }
+
+    .menu-icon {
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .back-home {
+      text-decoration: none;
+      font-size: 1rem;
+      color: #111;
+      transition: color 0.3s;
+    }
+
+    .back-home:hover {
+      color: #b76e79;
+    }
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-block;
+}
+
+.side-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      padding: 10px;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 10px;
+      color: #111;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .side-menu a:hover {
+      background: #f2f2f2;
+    }
+  .banner {
+  width: 100%;
+  height: 400px;          
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  display: block;
+}
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fdf5f6;
+            color: #53354a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(212, 106, 146, 0.12);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(212, 106, 146, 0.2);
+        }
+        .product-image {
+  width: 100%;
+  height: 250px;        
+  overflow: hidden;    
+  border-radius: 10px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  display: block;
+}
+
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #d46a92;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #53354a;
+        }
+        
+        .product-info p {
+            color: #8a6c7d;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #d46a92;
+        }
+        
+        .original-price {
+            font-size: 16px;
+            color: #b8a5b3;
+            text-decoration: line-through;
+        }
+        
+        .discount {
+            color: #d46a92;
+            font-weight: 600;
+            font-size: 14px;
+            background: rgba(212, 106, 146, 0.1);
+            padding: 3px 8px;
+            border-radius: 15px;
+        }
+        
+       
+.add-to-cart {
+  display: inline-block;
+  background-color: #d34ba6; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+.add-to-cart:hover {
+  background-color: #6d5a44;
+}
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #8a6c7d;
+            border-top: 1px solid #f8dde6;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: #d46a92;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #8a6c7d;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #d46a92;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    
+        .copyright {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        
+        .newsletter {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .newsletter input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #f8dde6;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        
+        .newsletter button {
+            background: #d46a92;
+            color: white;
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+       .cart {
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  margin-left: auto; 
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="page-title">WOMEN</div>
+    <a href="eg2.html" class="back-home">Home</a>
+    <nav>
+  <div class="cart" id="cart">
+    <a href="cart.html">🛒</a> <span id="cart-count">0</span>
+  </div>
+</nav>
+  </header>
+<div class="side-menu">
+  <a href="#">Dresses</a>
+  <a href="#">Tops</a>
+  <a href="#">Jeans</a>
+  <a href="#">Jackets</a>
+  <a href="#">Shoes</a>
+</div>
+</div>
+  <div class="banner">
+    <img src="wb.jpg" alt="">
+  </div>
+<br>
+        <br>
+     <div class="container">
+        <div class="section-title">
+            <h1>Women's Collection</h1>
+            <p>Elegant fashion for the modern woman</p>
+        </div>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                   <img src="og1.jpg" alt="">
+                    <div class="product-badge">New</div>
+                </div>
+                <div class="product-info">
+                    <h3>Floral Summer Dress</h3>
+                    <p>Lightweight and flowy for summer days</p>
+                    <div class="price">
+                        <span class="current-price">$49.99</span>
+                        <span class="original-price">$59.99</span>
+                        <span class="discount">-17%</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="og2.jpg" alt="">
+                    <div class="product-badge">Bestseller</div>
+                </div>
+                <div class="product-info">
+                    <h3>Knit Cardigan</h3>
+                    <p>Perfect for layering in any season</p>
+                    <div class="price">
+                        <span class="current-price">$55.99</span>
+                        <span class="original-price">$65.99</span>
+                        <span class="discount">-15%</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                     <img src="og3.jpg" alt="">
+                </div>
+                <div class="product-info">
+                    <h3>Sun Hat with Bow</h3>
+                    <p>Chic sun protection with elegant bow detail</p>
+                    <div class="price">
+                        <span class="current-price">$39.99</span>
+                        <span class="original-price">$49.99</span>
+                        <span class="discount">-20%</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                      <img src="og4.jpg" alt="">
+                    <div class="product-badge">Sale</div>
+                </div>
+                <div class="product-info">
+                    <h3>Lace Socks (3-Pack)</h3>
+                    <p>Delicate lace trim for a feminine touch</p>
+                    <div class="price">
+                        <span class="current-price">$22.99</span>
+                        <span class="original-price">$29.99</span>
+                        <span class="discount">-23%</span>
+                    </div>
+                    <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                      <img src="og5.jpg" alt="">
+                </div>
+                <div class="product-info">
+                    <h3>Cashmere Gloves</h3>
+                    <p>Ultra-soft cashmere for winter elegance</p>
+                    <div class="price">
+                        <span class="current-price">$45.99</span>
+                        <span class="original-price">$59.99</span>
+                        <span class="discount">-23%</span>
+                    </div>
+                  <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                      <img src="og6.jpg" alt="">
+                    <div class="product-badge">Trending</div>
+                </div>
+                <div class="product-info">
+                    <h3>Cat-Eye Sunglasses</h3>
+                    <p>Retro style with modern UV protection</p>
+                    <div class="price">
+                        <span class="current-price">$79.99</span>
+                        <span class="original-price">$99.99</span>
+                        <span class="discount">-20%</span>
+                    </div>
+                   <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                      <img src="og7.jpg" alt="">i>
+                    <div class="product-badge">Trending</div>
+                </div>
+                <div class="product-info">
+                    <h3>Cat-Eye Sunglasses</h3>
+                    <p>Retro style with modern UV protection</p>
+                    <div class="price">
+                        <span class="current-price">$79.99</span>
+                        <span class="original-price">$99.99</span>
+                        <span class="discount">-20%</span>
+                    </div>
+                   <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                     <img src="og8.jpg" alt="">
+                    <div class="product-badge">Trending</div>
+                </div>
+                <div class="product-info">
+                    <h3>Cat-Eye Sunglasses</h3>
+                    <p>Retro style with modern UV protection</p>
+                    <div class="price">
+                        <span class="current-price">$79.99</span>
+                        <span class="original-price">$99.99</span>
+                        <span class="discount">-20%</span>
+                    </div>
+                   <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                      <img src="og9.jpg" alt="">
+                    <div class="product-badge">Trending</div>
+                </div>
+                <div class="product-info">
+                    <h3>Cat-Eye Sunglasses</h3>
+                    <p>Retro style with modern UV protection</p>
+                    <div class="price">
+                        <span class="current-price">$79.99</span>
+                        <span class="original-price">$99.99</span>
+                        <span class="discount">-20%</span>
+                    </div>
+                  <button class="add-to-cart" data-name="Classic Leather Tote" data-price="149.99">Add to Cart</button>
+
+                </div>
+            </div>
+    </div>
+ <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Shipping Information</a>
+                    <a href="#">Returns & Exchanges</a>
+                    <a href="#">Size Guide</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <a href="#">Our Story</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Store Locations</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe to get exclusive offers</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email address">
+                        <button><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Women's Collection. All rights reserved.</p>
+            </div>
+        </footer>
+        <script>
+    function toggleMenu() {
+      const menu = document.getElementById("sideMenu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  </script>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+function updateCartCount() {
+  let badge = document.getElementById("cart-count");
+  if (badge) badge.innerText = cart.length;
+}
+function addToCart(productName, price) {
+  cart.push({ name: productName, price: price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  alert(productName + " added to cart!");
+}
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.getAttribute("data-name");
+    const price = parseFloat(button.getAttribute("data-price"));
+    addToCart(name, price);
+  });
+});
+
+updateCartCount();
+
+</script>
+</body>
+</html>
